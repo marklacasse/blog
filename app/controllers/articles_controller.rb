@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+#setup a little security
+http_basic_authenticate_with name: "guest", password: "guest", except: [:index, :show]
+
 
 #ROUTE articles GET    /articles(.:format)          articles#index
   def index
